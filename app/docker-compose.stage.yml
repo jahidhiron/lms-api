@@ -1,0 +1,18 @@
+version: "3"
+services:
+  e-learning:
+    build:
+      context: .
+      args:
+        NODE_ENV: stage
+    ports:
+      - "4042:4042"
+    environment:
+      - NODE_ENV=stage
+      - PORT=4042
+    depends_on:
+      - redis
+    command: ["npm", "run", "stage"]
+
+  redis:
+    image: redis

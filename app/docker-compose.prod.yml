@@ -1,0 +1,18 @@
+version: "3"
+services:
+  e-learning:
+    build:
+      context: .
+      args:
+        NODE_ENV: prod
+    ports:
+      - "4041:4041"
+    environment:
+      - NODE_ENV=prod
+      - PORT=4041
+    depends_on:
+      - redis
+    command: ["npm", "run", "start"]
+
+  redis:
+    image: redis

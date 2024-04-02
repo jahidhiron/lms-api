@@ -1,0 +1,4222 @@
+{
+	"info": {
+		"_postman_id": "7ff4e52a-7a48-4552-a331-348c19bea01b",
+		"name": "e-learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3378045"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Student 4\",\r\n    \"email\": \"student4@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/add-admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"add-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-lang-id",
+								"value": "jp",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/refresh-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend-email-verification-code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hironse.96@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/send-code-to-email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"send-code-to-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "email verification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hironse.96@gmail.com\",\r\n    \"code\": \"568930\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/verify-email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"namehiron.96@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/forgot-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-forgot-password-code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hironse.96@gmail.com\",\r\n    \"code\": \"233001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/verify-forgot-password-code",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-forgot-password-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hironse.96@gmail.com\",\r\n    \"code\": \"233001\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/reset-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"555555\",\r\n    \"newPassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/change-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM4MjI2NzdjNmFkNWU0NTViODBlYzIiLCJuYW1lIjoiSmFoaWQgSGlyb24iLCJlbWFpbCI6InUzQGdtYWlsLmNvbSIsImF2YXRhciI6Ii4vYXZhdGFyLnBuZyIsImxhbmciOjEsInJvbGUiOjMsInVzZXJSZWYiOnsiY2FuZGlkYXRlSWQiOiI2MzM4MjI2NzdjNmFkNWU0NTViODBlYzAifSwiaWF0IjoxNjY0NjgxOTQ4LCJleHAiOjE2NjUyODY3NDh9.HlQ62LrJbMiBUcAx02Hnz_1kHHiFJC_9we-dJoVsRZY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/user/soft/643cd394bc3e2e1808059f89",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"user",
+								"soft",
+								"643cd394bc3e2e1808059f89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hard delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzM4MjI2NzdjNmFkNWU0NTViODBlYzIiLCJuYW1lIjoiSmFoaWQgSGlyb24iLCJlbWFpbCI6InUzQGdtYWlsLmNvbSIsImF2YXRhciI6Ii4vYXZhdGFyLnBuZyIsImxhbmciOjEsInJvbGUiOjMsInVzZXJSZWYiOnsiY2FuZGlkYXRlSWQiOiI2MzM4MjI2NzdjNmFkNWU0NTViODBlYzAifSwiaWF0IjoxNjY0NjgxOTQ4LCJleHAiOjE2NjUyODY3NDh9.HlQ62LrJbMiBUcAx02Hnz_1kHHiFJC_9we-dJoVsRZY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/user/hard/643cd394bc3e2e1808059f89",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"user",
+								"hard",
+								"643cd394bc3e2e1808059f89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "current-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQXlzaGEgU2lkZGlrYSIsImVtYWlsIjoiYXlzaGEuc2lkZGlrYTAzMDRAZ21haWwuY29tIiwiaWF0IjoxNjgxNDUyODExLCJleHAiOjE2ODE0NTI4NDEsImF1ZCI6IjY0MzhlYjVmNmY0NmQyYzkzNzhlMDE4NiIsImlzcyI6ImphaGlkYWNhZGVteS5jb20ifQ.jM4chetnc461Q2H-YugJfCDiM9_REjgb1aPvlDxz-Z4; refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQXlzaGEgU2lkZGlrYSIsImVtYWlsIjoiYXlzaGEuc2lkZGlrYTAzMDRAZ21haWwuY29tIiwiaWF0IjoxNjgxNDUyODExLCJleHAiOjE2ODE0NTI4NzEsImF1ZCI6IjY0MzhlYjVmNmY0NmQyYzkzNzhlMDE4NiIsImlzcyI6ImphaGlkYWNhZGVteS5jb20ifQ.Et-HBW9oBkCddYcOOqIQmbL92aSm7Fh5PzRsD031w00",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/current",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "namehiron.96@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzYyN2Y3MmZhMzkwYzc0OGU1Njg1MzgiLCJuYW1lIjoiSmFoaWR1bCBJc2xhbSBIaXJvbiIsImVtYWlsIjoibmFtZWhpcm9uLjk2QGdtYWlsLmNvbSIsInByb2ZpbGUiOiI2MzYyN2Y3MmZhMzkwYzc0OGU1Njg1MzYiLCJsYW5nIjoxLCJyb2xlIjoyLCJzdGF0dXMiOjEsImlhdCI6MTY2NzQwMDI0MywiZXhwIjoxNjY4MDA1MDQzfQ.7sRRzAYorRSLk7llnDsfm8aS0rXNqZhAryerLOWWeKw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/user/652b750b3da9cae03409a6e6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"user",
+								"652b750b3da9cae03409a6e6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/signout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jahid\",\r\n    \"avatarId\": \"652fb04b9e2fe6ac07ae2ed0\",\r\n    \"title\": \"Software Engineer\",\r\n    \"bio\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"website\": \"http://www.website.com\",\r\n    \"linkedIn\": \"http://www.linkedin.com\",\r\n    \"facebook\": \"http://www.facebook.com\",\r\n    \"youtube\": \"http://www.youtube.com\",\r\n    \"twitter\": \"http://www.twitter.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/profiles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/profiles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Category 2\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Category 4 updated\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories/652cf99754d949c48cb15bd7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"652cf99754d949c48cb15bd7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories/652cf99454d949c48cb15bd2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"652cf99454d949c48cb15bd2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "car",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories/652cf99754d949c48cb15bd7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"652cf99754d949c48cb15bd7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sub-category",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sub Category 4\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"categoryId\": \"65a9e4e4e7f62fb965bd8da1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/sub-categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sub-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Category 4 update\",\r\n    \"desc\": \"U In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"categoryId\": \"652cf97654d949c48cb15bc8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/sub-categories/652cfd649807bc1ea344dbb0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sub-categories",
+								"652cfd649807bc1ea344dbb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/sub-categories/652cfd649807bc1ea344dbb0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sub-categories",
+								"652cfd649807bc1ea344dbb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/sub-categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sub-categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Sub Category 5",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "652cf99154d949c48cb15bcd",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/sub-categories/652cfd2f9807bc1ea344db9e",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sub-categories",
+								"652cfd2f9807bc1ea344db9e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fiile",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/TestData.txt"
+								},
+								{
+									"key": "type",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "courseId",
+									"value": "652fb5b79e2fe6ac07ae2ef0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/files",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/files/650a94080aab716a60706038",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"650a94080aab716a60706038"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/files",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "2. Typescript Overview.mp4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/files/652e8daa1a50925737c4eebb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"652e8daa1a50925737c4eebb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Course Title 10\",\r\n    \"subTitle\": \"Course sub title 7\",\r\n    \"desc\": \"Test\",\r\n    \"language\": \"Japanease\",\r\n    \"level\": \"Intermidiate\",\r\n    \"categoryId\": \"652cf99154d949c48cb15bcd\",\r\n    \"subCategoryId\": \"652cfd3b9807bc1ea344dba4\",\r\n    \"whatWillLearn\": [\r\n        \"Point 1\",\r\n        \"Point 2\",\r\n        \"Point 3\"\r\n    ],\r\n    \"prerequisites\": [\r\n        \"Point 1\",\r\n        \"Point 2\",\r\n        \"Point 3\"\r\n    ],\r\n    \"whoIsThisCourseFor\": [\r\n        \"Point 1\",\r\n        \"Point 2\",\r\n        \"Point 3\"\r\n    ],\r\n    \"thumbnailId\": \"652fb04b9e2fe6ac07ae2ed0\",\r\n    \"promotionalVideoId\": \"652e8a48f6f526b4a26e367e\",\r\n    \"price\": {\r\n        \"currency\": \"JP\",\r\n        \"amount\": 3000\r\n    },\r\n    \"welcomeMsg\": \"Welcome message 1\",\r\n    \"congratulationsMsg\": \"congratulations message 1\",\r\n    \"sections\": [\r\n        {\r\n            \"title\": \"Section 1\",\r\n            \"desc\": \"Section 1 desc\",\r\n            \"items\": [\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f392156649becfeabf72\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f1ba880e6b21173f7d34\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f1c7880e6b21173f7d40\"\r\n                },\r\n                {\r\n                    \"itemType\": 2,\r\n                    \"quizId\": \"6533772d38c7b482d5ea28c3\"\r\n                },\r\n                {\r\n                    \"itemType\": 3,\r\n                    \"assignmentId\": \"654c65011321516e666162a3\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"title\": \"Section 2\",\r\n            \"desc\": \"Section 2 desc\",\r\n            \"items\": [\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f1cb880e6b21173f7d4c\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f1d0880e6b21173f7d58\"\r\n                },\r\n                {\r\n                    \"itemType\": 2,\r\n                    \"quizId\": \"6533772838c7b482d5ea28b9\"\r\n                },\r\n                {\r\n                    \"itemType\": 3,\r\n                    \"assignmentId\": \"654c65271321516e666162be\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"title\": \"Section 3\",\r\n            \"desc\": \"Section 3 desc\",\r\n            \"items\": [\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f301156649becfeabf2e\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f307156649becfeabf39\"\r\n                },\r\n                {\r\n                    \"itemType\": 2,\r\n                    \"quizId\": \"6533771938c7b482d5ea28af\"\r\n                },\r\n                {\r\n                    \"itemType\": 3,\r\n                    \"assignmentId\": \"654c652c1321516e666162d9\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/courses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Course Title 10 updated\",\r\n    \"subTitle\": \"Course sub title 6 updated\",\r\n    \"desc\": \"Test\",\r\n    \"language\": \"Japanease\",\r\n    \"level\": \"Intermidiate\",\r\n    \"categoryId\": \"652cf99154d949c48cb15bcd\",\r\n    \"subCategoryId\": \"652cfd3b9807bc1ea344dba4\",\r\n    \"whatWillLearn\": [\r\n        \"Point 1\",\r\n        \"Point 2\",\r\n        \"Point 3\"\r\n    ],\r\n    \"prerequisites\": [\r\n        \"Point 1\",\r\n        \"Point 2\",\r\n        \"Point 3\"\r\n    ],\r\n    \"whoIsThisCourseFor\": [\r\n        \"Point 1\",\r\n        \"Point 2\",\r\n        \"Point 3\"\r\n    ],\r\n    \"thumbnailId\": \"652fb04b9e2fe6ac07ae2ed0\",\r\n    \"promotionalVideoId\": \"652e8a48f6f526b4a26e367e\",\r\n    \"price\": {\r\n        \"currency\": \"JP\",\r\n        \"amount\": 3000\r\n    },\r\n    \"welcomeMsg\": \"Welcome message 1\",\r\n    \"congratulationsMsg\": \"congratulations message 1\",\r\n    \"sections\": [\r\n        {\r\n            \"title\": \"Section 1\",\r\n            \"desc\": \"Section 1 desc\",\r\n            \"items\": [\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f392156649becfeabf72\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f1ba880e6b21173f7d34\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f1c7880e6b21173f7d40\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6555e5c960f0027ef1d874d0\"\r\n                },\r\n                {\r\n                    \"itemType\": 2,\r\n                    \"quizId\": \"6533772d38c7b482d5ea28c3\"\r\n                },\r\n                {\r\n                    \"itemType\": 3,\r\n                    \"assignmentId\": \"654c65011321516e666162a3\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"title\": \"Section 2\",\r\n            \"desc\": \"Section 2 desc\",\r\n            \"items\": [\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f1cb880e6b21173f7d4c\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f1d0880e6b21173f7d58\"\r\n                },\r\n                {\r\n                    \"itemType\": 2,\r\n                    \"quizId\": \"6533772838c7b482d5ea28b9\"\r\n                },\r\n                {\r\n                    \"itemType\": 3,\r\n                    \"assignmentId\": \"654c65271321516e666162be\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"title\": \"Section 3\",\r\n            \"desc\": \"Section 3 desc\",\r\n            \"items\": [\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f301156649becfeabf2e\"\r\n                },\r\n                {\r\n                    \"itemType\": 1,\r\n                    \"lectureId\": \"6539f307156649becfeabf39\"\r\n                },\r\n                {\r\n                    \"itemType\": 2,\r\n                    \"quizId\": \"6533771938c7b482d5ea28af\"\r\n                },\r\n                {\r\n                    \"itemType\": 3,\r\n                    \"assignmentId\": \"654c652c1321516e666162d9\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/courses/65a8bfda906d31967feafab8",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"65a8bfda906d31967feafab8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories/652cf99454d949c48cb15bd2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"652cf99454d949c48cb15bd2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/courses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Course Title 1",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "652cf99154d949c48cb15bcd",
+									"disabled": true
+								},
+								{
+									"key": "subCategoryId",
+									"value": "652cfd3b9807bc1ea344dba4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "public-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/courses/public",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"public"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Course Title 1",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "developmenet",
+									"disabled": true
+								},
+								{
+									"key": "subCategory",
+									"value": "sub-category-2",
+									"disabled": true
+								},
+								{
+									"key": "level",
+									"value": "Intermidiate",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "duration",
+									"value": "smallet/smaller/small/medium/large",
+									"disabled": true
+								},
+								{
+									"key": "quiz",
+									"value": "quiz",
+									"disabled": true
+								},
+								{
+									"key": "assignment",
+									"value": "assignment",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "subtitle",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "latest/reviewed/rated",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "free",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/courses/652fb5b79e2fe6ac07ae2ef0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"652fb5b79e2fe6ac07ae2ef0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "public-detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/courses/public/course-title-6-updated-1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"public",
+								"course-title-6-updated-1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "announcement",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Announcement 2\",\r\n    \"desc\": \"Announcement desc 2\",\r\n    \"courseId\": \"6539f41aacbd94f2e73aa17e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/announcements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"announcements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Announcement 1 update\",\r\n    \"desc\": \"Announcement desc 1 update\",\r\n    \"courseId\": \"6539f41aacbd94f2e73aa17e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/announcements/655d9301ba86fe57c2b4867a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"announcements",
+								"655d9301ba86fe57c2b4867a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Comment 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/announcements/add-comment/655d9301ba86fe57c2b4867a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"announcements",
+								"add-comment",
+								"655d9301ba86fe57c2b4867a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": \"655d96f6decf4e243fe00436\",\r\n    \"title\": \"Comment 1 update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/announcements/update-comment/655d9301ba86fe57c2b4867a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"announcements",
+								"update-comment",
+								"655d9301ba86fe57c2b4867a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": \"655d96f6decf4e243fe00436\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/announcements/delete-comment/655d9301ba86fe57c2b4867a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"announcements",
+								"delete-comment",
+								"655d9301ba86fe57c2b4867a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/announcements/655d9320ba86fe57c2b486c2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"announcements",
+								"655d9320ba86fe57c2b486c2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/announcements",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"announcements"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "courseId",
+									"value": "6539f41aacbd94f2e73aa17e",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/announcements/655d9301ba86fe57c2b4867a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"announcements",
+								"655d9301ba86fe57c2b4867a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "note",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Note 6\",\r\n    \"lectureId\": \"6539f1c7880e6b21173f7d40\",\r\n    \"noteInSecond\": 130\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/notes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Note 5\",\r\n    \"lectureId\": \"6539f1c7880e6b21173f7d40\",\r\n    \"noteInSecond\": 140\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/notes/656310729d0321f2d20742e7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								"656310729d0321f2d20742e7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/notes/655db3cbd6f0eb4db9764557",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								"655db3cbd6f0eb4db9764557"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/notes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "7",
+									"disabled": true
+								},
+								{
+									"key": "lectureId",
+									"value": "6539f1c7880e6b21173f7d40",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/notes/656322e76266afe788960258",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								"656322e76266afe788960258"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rating",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 5,\r\n    \"courseId\": \"652fb5b79e2fe6ac07ae2ef0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/ratings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/ratings/653c89c553fa6147cf3cde01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ratings",
+								"653c89c553fa6147cf3cde01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/ratings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ratings"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "courseId",
+									"value": "652fb5b79e2fe6ac07ae2ef0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/ratings/653c89a753fa6147cf3cddd1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ratings",
+								"653c89a753fa6147cf3cddd1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"msg\": \"Test review 3\",\r\n    \"rating\": 4.5,\r\n    \"courseId\": \"652fb5b79e2fe6ac07ae2ef0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reviews",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-reply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"msg\": \"Review reply 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reviews/reply/653c90d9bc6105f5bff7cde9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"reply",
+								"653c90d9bc6105f5bff7cde9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"msg\": \"Test review updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reviews/653c90d9bc6105f5bff7cde9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"653c90d9bc6105f5bff7cde9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-reply",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"msg\": \"Review reply updated 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reviews/reply/653c90d9bc6105f5bff7cde9?replyId=653c979dd47dacaa6e7b8a92",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"reply",
+								"653c90d9bc6105f5bff7cde9"
+							],
+							"query": [
+								{
+									"key": "replyId",
+									"value": "653c979dd47dacaa6e7b8a92"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reviews/653c90d9bc6105f5bff7cde9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"653c90d9bc6105f5bff7cde9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove-reply",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reviews/reply/653c90d9bc6105f5bff7cde9?replyId=653c957e89dcd2fcd67e5c52",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"reply",
+								"653c90d9bc6105f5bff7cde9"
+							],
+							"query": [
+								{
+									"key": "replyId",
+									"value": "653c957e89dcd2fcd67e5c52"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reviews?courseId=652fb5b79e2fe6ac07ae2ef0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "car",
+									"disabled": true
+								},
+								{
+									"key": "courseId",
+									"value": "652fb5b79e2fe6ac07ae2ef0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reviews/656d866296ed1327b97a5b36",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"656d866296ed1327b97a5b36"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "QA",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"QA 4\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"courseId\": \"6539f426acbd94f2e73aa1a8\",\r\n    \"lectureId\": \"6539f1ba880e6b21173f7d34\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "qa-vote",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas/vote/659cdd95c1900bc5a6668740",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas",
+								"vote",
+								"659cdd95c1900bc5a6668740"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "qa-reply-vote",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"replyId\": \"65a21e10948c1ce399a3cc52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas/reply-vote/65a0c43e5cf601176fcc96cd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas",
+								"reply-vote",
+								"65a0c43e5cf601176fcc96cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-reply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"desc\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas/reply/65a0c43e5cf601176fcc96cd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas",
+								"reply",
+								"65a0c43e5cf601176fcc96cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-reply",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"desc\": \"Description 1 updated\",\r\n    \"replyId\": \"659ce4e9820790605adee71a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas/reply/659cdd95c1900bc5a6668740",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas",
+								"reply",
+								"659cdd95c1900bc5a6668740"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-reply",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas/reply/659cdd95c1900bc5a6668740?replyId=659ce507820790605adee72b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas",
+								"reply",
+								"659cdd95c1900bc5a6668740"
+							],
+							"query": [
+								{
+									"key": "replyId",
+									"value": "659ce507820790605adee72b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"QA 1 updated\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"lectureId\": \"6539f1c7880e6b21173f7d40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas/659cdd95c1900bc5a6668740",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas",
+								"659cdd95c1900bc5a6668740"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas/659cdd95c1900bc5a6668740",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas",
+								"659cdd95c1900bc5a6668740"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "QA 1 updated",
+									"disabled": true
+								},
+								{
+									"key": "courseId",
+									"value": "6539f426acbd94f2e73aa1a8",
+									"disabled": true
+								},
+								{
+									"key": "lectureId",
+									"value": "6539f1ba880e6b21173f7d34",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/qas/65a0c43e5cf601176fcc96cd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"qas",
+								"65a0c43e5cf601176fcc96cd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lecture",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Lecture 9\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"preview\": true,\r\n    \"videoId\": \"652e8daa1a50925737c4eebb\",\r\n    \"resources\": [\r\n        {\r\n            \"title\": \"Resource 1\",\r\n            \"fileId\": \"652fb04b9e2fe6ac07ae2ed0\"\r\n        },\r\n        {\r\n            \"title\": \"Resource 2\",\r\n            \"fileId\": \"652fb04b9e2fe6ac07ae2ed0\"\r\n        },\r\n        {\r\n            \"title\": \"Resource 3\",\r\n            \"link\": \"https://stackoverflow.com/questions/39837678/why-no-array-prototype-flatmap-in-javascript\"\r\n        }\r\n    ],\r\n    \"cations\": [\r\n        {\r\n            \"lang\": \"English\",\r\n            \"fileId\": \"6555e59860f0027ef1d874c6\"\r\n        },\r\n        {\r\n            \"lang\": \"Japanease\",\r\n            \"fileId\": \"6555e59860f0027ef1d874c6\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lectures",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lectures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Lecture 9\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"preview\": true,\r\n    \"videoId\": \"652e8daa1a50925737c4eebb\",\r\n    \"resources\": [\r\n        {\r\n            \"title\": \"Resource 1\",\r\n            \"fileId\": \"652fb04b9e2fe6ac07ae2ed0\"\r\n        },\r\n        {\r\n            \"title\": \"Resource 2\",\r\n            \"fileId\": \"652fb04b9e2fe6ac07ae2ed0\"\r\n        },\r\n        {\r\n            \"title\": \"Resource 3\",\r\n            \"link\": \"https://stackoverflow.com/questions/39837678/why-no-array-prototype-flatmap-in-javascript\"\r\n        }\r\n    ],\r\n    \"cations\": [\r\n        {\r\n            \"lang\": \"English\",\r\n            \"fileId\": \"6555e59860f0027ef1d874c6\"\r\n        },\r\n        {\r\n            \"lang\": \"Japanease\",\r\n            \"fileId\": \"6555e59860f0027ef1d874c6\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lectures/656310729d0321f2d20742e7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lectures",
+								"656310729d0321f2d20742e7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lectures/6530e7ee32c3e0eccf95e1dd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lectures",
+								"6530e7ee32c3e0eccf95e1dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lectures",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lectures"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Lecture 4 updated",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lectures/6541d34c9bd8ac595868a9bf",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lectures",
+								"6541d34c9bd8ac595868a9bf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "quiz",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Quiz 4\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"courseId\": \"652fb5b79e2fe6ac07ae2ef0\",\r\n    \"questions\": [\r\n        {\r\n            \"title\": \"Question 1\",\r\n            \"questionType\": 1,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": true,\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": false,\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [0],\r\n            \"score\": 2\r\n        },\r\n        {\r\n            \"title\": \"Question 2\",\r\n            \"questionType\": 2,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": \"o1\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": \"o2\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 2,\r\n                    \"option\": \"o3\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 3,\r\n                    \"option\": \"o4\",\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [1],\r\n            \"score\": 2\r\n        },\r\n        {\r\n            \"title\": \"Question 3\",\r\n            \"questionType\": 2,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": \"o1\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": \"o2\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 2,\r\n                    \"option\": \"o3\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 3,\r\n                    \"option\": \"o4\",\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [3],\r\n            \"score\": 2\r\n        },\r\n        {\r\n            \"title\": \"Question 4\",\r\n            \"questionType\": 2,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": \"o1\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": \"o2\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 2,\r\n                    \"option\": \"o3\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 3,\r\n                    \"option\": \"o4\",\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [0],\r\n            \"score\": 2\r\n        },\r\n        {\r\n            \"title\": \"Question 5\",\r\n            \"questionType\": 2,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": \"o1\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": \"o2\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 2,\r\n                    \"option\": \"o3\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 3,\r\n                    \"option\": \"o4\",\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [2],\r\n            \"score\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quizs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quizs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Quiz 4 updated\",\r\n    \"desc\": \"In up publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"courseId\": \"652fb0b59e2fe6ac07ae2ed8\",\r\n    \"questions\": [\r\n        {\r\n            \"title\": \"Question 1\",\r\n            \"questionType\": 1,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": true,\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": false,\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [0],\r\n            \"score\": 2\r\n        },\r\n        {\r\n            \"title\": \"Question 2\",\r\n            \"questionType\": 2,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": \"o1\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": \"o2\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 2,\r\n                    \"option\": \"o3\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 3,\r\n                    \"option\": \"o4\",\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [1],\r\n            \"score\": 2\r\n        },\r\n        {\r\n            \"title\": \"Question 3\",\r\n            \"questionType\": 2,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": \"o1\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": \"o2\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 2,\r\n                    \"option\": \"o3\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 3,\r\n                    \"option\": \"o4\",\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [3],\r\n            \"score\": 2\r\n        },\r\n        {\r\n            \"title\": \"Question 4\",\r\n            \"questionType\": 2,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": \"o1\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": \"o2\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 2,\r\n                    \"option\": \"o3\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 3,\r\n                    \"option\": \"o4\",\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [0],\r\n            \"score\": 2\r\n        },\r\n        {\r\n            \"title\": \"Question 5\",\r\n            \"questionType\": 2,\r\n            \"options\": [\r\n                {\r\n                    \"index\": 0,\r\n                    \"option\": \"o1\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 1,\r\n                    \"option\": \"o2\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 2,\r\n                    \"option\": \"o3\",\r\n                    \"explain\": \"test\"\r\n                },\r\n                {\r\n                    \"index\": 3,\r\n                    \"option\": \"o4\",\r\n                    \"explain\": \"test\"\r\n                }\r\n            ],\r\n            \"answer\": [2],\r\n            \"score\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quizs/6533773138c7b482d5ea28cd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quizs",
+								"6533773138c7b482d5ea28cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quizs/6533773138c7b482d5ea28cd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quizs",
+								"6533773138c7b482d5ea28cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quizs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quizs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "car",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quizs/6533773138c7b482d5ea28cd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quizs",
+								"6533773138c7b482d5ea28cd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "assignment",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Assignment 4\",\r\n    \"desc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"duration\": 30,\r\n    \"instructionVideoId\": \"652e85f1b52681c38cdd8fb4\",\r\n    \"instructionDesc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"instructionFileId\": \"652fb04b9e2fe6ac07ae2ed0\",\r\n    \"solutionVideoId\": \"652e85f1b52681c38cdd8fb4\",\r\n    \"solutionFileId\": \"652fb04b9e2fe6ac07ae2ed0\",\r\n    \"courseId\": \"652fb5b79e2fe6ac07ae2ef0\",\r\n    \"questions\": [\r\n        {\r\n            \"title\": \"Question 1\",\r\n            \"correctAnswer\": \"Correct answer 1\"\r\n        },{\r\n            \"title\": \"Question 2\",\r\n            \"correctAnswer\": \"Correct answer 2\"\r\n        },\r\n        {\r\n            \"title\": \"Question 3\",\r\n            \"correctAnswer\": \"Correct answer 3\"\r\n        },\r\n        {\r\n            \"title\": \"Question 4\",\r\n            \"correctAnswer\": \"Correct answer 4\"\r\n        },\r\n        {\r\n            \"title\": \"Question 5\",\r\n            \"correctAnswer\": \"Correct answer 5\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Assignment 4 updated\",\r\n    \"desc\": \"Updated In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"duration\": 40,\r\n    \"instructionVideoId\": \"652e86b62ecb5064ac0ad7dc\",\r\n    \"instructionDesc\": \"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.\",\r\n    \"instructionFileId\": \"6546463cd1c8eaf7eb84e176\",\r\n    \"solutionVideoId\": \"652e86b62ecb5064ac0ad7dc\",\r\n    \"solutionFileId\": \"6546463cd1c8eaf7eb84e176\",\r\n    \"courseId\": \"652fb5b79e2fe6ac07ae2ef0\",\r\n    \"questions\": [\r\n        {\r\n            \"title\": \"Question 1 udpated\",\r\n            \"correctAnswer\": \"Correct answer 1 udpated\"\r\n        },{\r\n            \"title\": \"Question 2 udpated\",\r\n            \"correctAnswer\": \"Correct answer 2 udpated\"\r\n        },\r\n        {\r\n            \"title\": \"Question 3 udpated\",\r\n            \"correctAnswer\": \"Correct answer 3 udpated\"\r\n        },\r\n        {\r\n            \"title\": \"Question 4 udpated\",\r\n            \"correctAnswer\": \"Correct answer 4 udpated\"\r\n        },\r\n        {\r\n            \"title\": \"Question 5 udpated\",\r\n            \"correctAnswer\": \"Correct answer 5 udpated\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignments/654c65301321516e666162f4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments",
+								"654c65301321516e666162f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignments/654c65301321516e666162f4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments",
+								"654c65301321516e666162f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Assignment 4 updated",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignments/654c65301321516e666162f4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments",
+								"654c65301321516e666162f4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "assignment-answer",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"assignmentId\": \"654c652c1321516e666162d9\",\r\n    \"answers\": [\r\n        {\r\n            \"title\": \"Question 1\",\r\n            \"correctAnswer\": \"Correct answer 1\",\r\n            \"answerProvided\": \"Correct answer 1\"\r\n        },{\r\n            \"title\": \"Question 2\",\r\n            \"correctAnswer\": \"Correct answer 2\",\r\n            \"answerProvided\": \"Wrong Correct answer 2\"\r\n        },\r\n        {\r\n            \"title\": \"Question 3\",\r\n            \"correctAnswer\": \"Correct answer 3\",\r\n            \"answerProvided\": \"Correct answer 3\"\r\n        },\r\n        {\r\n            \"title\": \"Question 4\",\r\n            \"correctAnswer\": \"Correct answer 4\",\r\n            \"answerProvided\": \"Wrong Correct answer 4\"\r\n        },\r\n        {\r\n            \"title\": \"Question 5\",\r\n            \"correctAnswer\": \"Correct answer 5\",\r\n            \"answerProvided\": \"Correct answer 5\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignment-answers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignment-answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-assignment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"title\": \"Question 1\",\r\n            \"correctAnswer\": \"Correct answer 1\",\r\n            \"answerProvided\": \"Correct answer 1\"\r\n        },\r\n        {\r\n            \"title\": \"Question 2\",\r\n            \"correctAnswer\": \"Correct answer 2\",\r\n            \"answerProvided\": \"Wrong Correct answer 2\"\r\n        },\r\n        {\r\n            \"title\": \"Question 3\",\r\n            \"correctAnswer\": \"Correct answer 3\",\r\n            \"answerProvided\": \"Correct answer 3\"\r\n        },\r\n        {\r\n            \"title\": \"Question 4\",\r\n            \"correctAnswer\": \"Correct answer 4\",\r\n            \"answerProvided\": \"Wrong Correct answer 4\"\r\n        },\r\n        {\r\n            \"title\": \"Question 5\",\r\n            \"correctAnswer\": \"Correct answer 5\",\r\n            \"answerProvided\": \"Correct answer 5\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignment-answers/659799870fe9165ae7afb060",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignment-answers",
+								"659799870fe9165ae7afb060"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submit-assignment-answer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignment-answers/submit/6598e1f1ae6b8c8ff105523d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignment-answers",
+								"submit",
+								"6598e1f1ae6b8c8ff105523d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignment-answers/659799a50fe9165ae7afb07c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignment-answers",
+								"659799a50fe9165ae7afb07c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignment-answers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignment-answers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Assignment 4 updated",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/assignment-answers/654c652c1321516e666162d9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignment-answers",
+								"654c652c1321516e666162d9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "quiz-answer",
+			"item": [
+				{
+					"name": "quiz-submit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quizId\": \"654af9510f12bf15da60b691\",\r\n    \"answers\": [\r\n        {\r\n            \"questionId\": \"654af9510f12bf15da60b692\",\r\n            \"answerProvided\": [0]\r\n        },\r\n        {\r\n            \"questionId\": \"654af9510f12bf15da60b695\",\r\n            \"answerProvided\": [1]\r\n        },\r\n        {\r\n            \"questionId\": \"654af9510f12bf15da60b69a\",\r\n            \"answerProvided\": [3]\r\n        },\r\n        {\r\n            \"questionId\": \"654af9510f12bf15da60b69f\",\r\n            \"answerProvided\": [0]\r\n        },\r\n        {\r\n            \"questionId\": \"654af9510f12bf15da60b6a4\",\r\n            \"answerProvided\": [2]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quiz-answer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quiz-answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quiz-answer/653f4d6f49f4ce2761d3bce8",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quiz-answer",
+								"653f4d6f49f4ce2761d3bce8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quiz-answer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quiz-answer"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "quizId",
+									"value": "6533771938c7b482d5ea28af",
+									"disabled": true
+								},
+								{
+									"key": "courseId",
+									"value": "6539f41aacbd94f2e73aa17e",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Course Title 2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/quiz-answer/653f4d6f49f4ce2761d3bce8",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"quiz-answer",
+								"653f4d6f49f4ce2761d3bce8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wishlist",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"6539f421acbd94f2e73aa193\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/wishlists",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wishlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"6539f426acbd94f2e73aa1a8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/wishlists/653df71ab0b3d70c2106c031",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wishlists",
+								"653df71ab0b3d70c2106c031"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/wishlists/653df71ab0b3d70c2106c031",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wishlists",
+								"653df71ab0b3d70c2106c031"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/wishlists",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wishlists"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Course Title 3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/wishlists/653df71ab0b3d70c2106c031",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wishlists",
+								"653df71ab0b3d70c2106c031"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "addToCard",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"6539f421acbd94f2e73aa193\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/add-to-cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"add-to-cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"6539f426acbd94f2e73aa1a8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/add-to-cart/653e00ee756041864b13fceb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"add-to-cart",
+								"653e00ee756041864b13fceb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/add-to-cart/6558520f37348cc497fbc05f",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"add-to-cart",
+								"6558520f37348cc497fbc05f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/add-to-cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"add-to-cart"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/add-to-cart/655d9f74642e30d0bd2815a8",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"add-to-cart",
+								"655d9f74642e30d0bd2815a8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "pay",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 50,\r\n    \"currency\": \"JPY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/payments/pay",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "capture",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"63a0054bd7a171104c8bd8e8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/v1/payments/pay/5465446546/capture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"pay",
+								"5465446546",
+								"capture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/payments/63ba82cbde6cb629e8509d0b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"63ba82cbde6cb629e8509d0b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "Course title 1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/payments/63ba82cbde6cb629e8509d0b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"63ba82cbde6cb629e8509d0b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "enrollment",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"6539f421acbd94f2e73aa193\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/enrollments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"enrollments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "complete-lecture",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lectureId\": \"6539f426acbd94f2e73aa1a8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/enrollments/complete/653e00ee756041864b13fceb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"enrollments",
+								"complete",
+								"653e00ee756041864b13fceb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/enrollments/653e00e8756041864b13fcd8",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"enrollments",
+								"653e00e8756041864b13fcd8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/enrollments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"enrollments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/enrollments/65617b4ff174ce2bc8131c2f",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"enrollments",
+								"65617b4ff174ce2bc8131c2f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chat",
+			"item": [
+				{
+					"name": "conversation-list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/chats/conversations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"chats",
+								"conversations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

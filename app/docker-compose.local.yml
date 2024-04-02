@@ -1,0 +1,24 @@
+version: "3"
+services:
+  e-learning:
+    build:
+      context: .
+      args:
+        NODE_ENV: local
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "4043:4043"
+    environment:
+      - NODE_ENV=local
+      - PORT=4043
+    depends_on:
+      - redis
+    command: ["npm", "run", "local"]
+
+  redis:
+    image: redis
+    container_name: redis
+    expose:
+      - 6379
